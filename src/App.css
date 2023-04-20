@@ -1,0 +1,146 @@
+/**/
+
+html{
+  height: 100%;
+  margin:0;
+  background-color: rgba(10, 34, 83, 1);
+}
+
+body{
+  font-family: 'HarryPotter7', sans-serif;
+ /** background-image: url('./img/stars-background.jpeg');**/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  margin:0;
+  color: white;
+  background-color: rgba(10, 34, 83, 1);
+}
+
+.main-container{
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  background-color: rgba(10, 34, 83, 0.5);
+}
+
+.main-title h1{
+  font-size: 4rem;
+  margin:0;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.second-container{
+  width: 100%;
+}
+
+#start-image{
+  background-color: rgba(10, 34, 83, 0);
+  width: 20rem;
+  height: 20rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  background-image: url('./img/sorting-hat.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+
+.startButtons-container{
+  display: flex;
+  width: 25%;
+  margin: auto;
+}
+
+button{
+  width: 10rem;
+  height: 4rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  border: 1px solid white;
+  background-color: rgba(5, 31, 117, 0);
+  color: white;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.question-title-container{
+  width: 100%;
+}
+
+.question-title{
+  width: 75%;
+  font-size: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin: auto;
+}
+
+.options-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.option{
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem;
+
+  border-radius: 1rem;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.option:hover{
+  cursor: pointer;
+}
+
+.optionImage{
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 90%;
+  height: 7rem;
+  margin-top:0.5rem;
+  margin: auto;
+}
+
+.optionText{
+  width: 100%;
+  margin: auto;
+}
+
+.result-image-container{
+  width: 100%;
+}
+
+.result-image{
+  height: 15rem;
+  width: 15rem;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.result-title{
+  width: 100%;
+}
+
+@media (max-width: 600px){
+  .startButtons-container{
+      width: 100%;
+  }
+}
