@@ -5,9 +5,10 @@ import Quiz from "./Quiz";
 const Menu = () => {
     const [option, setOption] = useState('')
 
+    /*
     useEffect(()=>{
         console.log(option)
-    },[option])
+    },[option])*/
 
     const optionSelected = (selectedOption)=>{
         setOption(selectedOption)

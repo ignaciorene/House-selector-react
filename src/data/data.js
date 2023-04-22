@@ -6,11 +6,11 @@ const questions=[{
     "Options":[
         {
             "Type":'Cat',
-            "Image":"./img/cat.png",
+            "Image":"cat.png",
             "Options":[
                 {
                     "Answer": "Tabby cat",
-                    "Image":"./img/tabby-cat.png",
+                    "Image":"tabby-cat.png",
                     "Gryffindor": 21.85474842,
                     "Ravenclaw": -15.70618627,
                     "Hufflepuff": -18.29258668,
@@ -18,7 +18,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Siamese cat",
-                    "Image":"./img/siamese-cat.png",
+                    "Image":"siamese-cat.png",
                     "Gryffindor": 1.195226867,
                     "Ravenclaw": -16.3304582,
                     "Hufflepuff": -16.65956807,
@@ -26,7 +26,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Ginger cat",
-                    "Image":"./img/ginger-cat.png",
+                    "Image":"ginger-cat.png",
                     "Gryffindor": 0.839050219,
                     "Ravenclaw": -14.37048947,
                     "Hufflepuff": -16.95729454,
@@ -34,7 +34,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Black cat",
-                    "Image":"./img/black-cat.png",
+                    "Image":"black-cat.png",
                     "Gryffindor": -3.31335692,
                     "Ravenclaw": -15.09699497,
                     "Hufflepuff": -14.64059784,
@@ -42,7 +42,7 @@ const questions=[{
                 },
                 {
                     "Answer": "White cat",
-                    "Image":"./img/white-cat.png",
+                    "Image":"white-cat.png",
                     "Gryffindor": -2.010973881,
                     "Ravenclaw": -12.31639926,
                     "Hufflepuff": -14.30409975,
@@ -52,11 +52,11 @@ const questions=[{
         },
         {
             "Type":'Owl',
-            "Image":"./img/owl.png",
+            "Image":"owl.png",
             "Options":[
                 {
                     "Answer": "Tawny owl",
-                    "Image":"./img/tawny-owl.png",
+                    "Image":"tawny-owl.png",
                     "Gryffindor": -0.6218274,
                     "Ravenclaw": 33.24307636,
                     "Hufflepuff": -15.52800838,
@@ -64,7 +64,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Screech owl",
-                    "Image":"./img/Screech-Owl.jpeg",
+                    "Image":"Screech-Owl.jpeg",
                     "Gryffindor": 4.48854486,
                     "Ravenclaw": 32.14465664,
                     "Hufflepuff": -17.05815483,
@@ -72,7 +72,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Brown owl",
-                    "Image":"./img/brown-owl.png",
+                    "Image":"brown-owl.png",
                     "Gryffindor": 0.915519162,
                     "Ravenclaw": 35.14392634,
                     "Hufflepuff": -16.87498976,
@@ -80,7 +80,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Snowy owl",
-                    "Image":"./img/snowy-owl.png",
+                    "Image":"snowy-owl.png",
                     "Gryffindor": -12.04575153,
                     "Ravenclaw": 8.511453759,
                     "Hufflepuff": 13.7489804,
@@ -88,7 +88,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Barn owl",
-                    "Image":"./img/barn-owl.png",
+                    "Image":"barn-owl.png",
                     "Gryffindor": -1.251899991,
                     "Ravenclaw": 34.06472026,
                     "Hufflepuff": -16.7952532,
@@ -98,11 +98,11 @@ const questions=[{
         },
         {
             "Type":'Toad',
-            "Image":"./img/toad.png",
+            "Image":"toad.png",
             "Options":[
                 {
                     "Answer": "Common toad",
-                    "Image":"./img/common-toad.png",
+                    "Image":"common-toad.png",
                     "Gryffindor": -1.094048974,
                     "Ravenclaw": -21.72975856,
                     "Hufflepuff": 41.40180117,
@@ -110,7 +110,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Natterjack toad",
-                    "Image":"./img/natterjack-toad.avif",
+                    "Image":"natterjack-toad.avif",
                     "Gryffindor": -3.687242276,
                     "Ravenclaw": -21.61573659,
                     "Hufflepuff": 42.45530748,
@@ -118,7 +118,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Dragon toad",
-                    "Image":"./img/dragon-toad.webp",
+                    "Image":"dragon-toad.webp",
                     "Gryffindor": 19.14913015,
                     "Ravenclaw": -8.1912111,
                     "Hufflepuff": 0.748385153,
@@ -126,7 +126,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Harlequin toad",
-                    "Image":"./img/harlequin-toad.jpeg",
+                    "Image":"harlequin-toad.jpeg",
                     "Gryffindor": -5.394126249,
                     "Ravenclaw": -20.42261255,
                     "Hufflepuff": 42.91383116,
@@ -134,7 +134,7 @@ const questions=[{
                 },
                 {
                     "Answer": "Three toed tree toad",
-                    "Image":"./img/ThreeToedTreeToad.webp",
+                    "Image":"ThreeToedTreeToad.webp",
                     "Gryffindor": -10.19693536,
                     "Ravenclaw": 7.340865871,
                     "Hufflepuff": 12.782762,
