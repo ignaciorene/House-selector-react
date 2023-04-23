@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Quiz from "./Quiz";
+import FirstQuestion from "./FirstQuestion";
 
 const Menu = () => {
     const [option, setOption] = useState('')
@@ -34,7 +35,7 @@ const Menu = () => {
                 </div>
                 </>
             )}
-            {option && <Quiz prop={option} />}
+            {option && <FirstQuestion prop={option} />}
         </div>
     )
 } 

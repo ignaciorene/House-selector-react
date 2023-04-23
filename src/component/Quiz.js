@@ -1,6 +1,13 @@
 import React from "react";
 import { useState,useEffect } from "react";
-import questions from "../data/data";
+import styled from "styled-components";
+import { questions } from "../data/data";
+import FirstQuestion from "./FirstQuestion";
+
+//when user select an answer then the answer will highlight
+const OptionStyle = styled.div`
+    background: ${({selected})=>selected?'red' : ''};
+`
 
 //function that helps choose random selection of questions
 function getRandomSelection(min, max) {
@@ -31,9 +38,9 @@ const Quiz = ({prop}) => {
     In case the user choose all questions then it will use the entire database */
     if (option == 'normalSelection' && questionsSelected.length === 0){
         let i=0;
-        let newQuestionsSelected = [0];
+        let newQuestionsSelected = [];
         while(i<7){
-            let n = getRandomSelection(1,questions.length-1);
+            let n = getRandomSelection(0,questions.length-1);
             if(!newQuestionsSelected.includes(n)) {
                 i++;
                 newQuestionsSelected.push(n);
@@ -53,12 +60,18 @@ const Quiz = ({prop}) => {
         setCurrentQuestion(currentQuestion + 1)
     }
 
+    //function
+    const onSelect = (answer) =>{
+        console.log(answer)
+        setSelectedAnswer(answer)
+    }
+
     //function that shows current question
     const questionDisplay = ()=>{
 
         const question = questions[questionsSelected[currentQuestion]]
-        const questionTitle = question ? question.Question : ''
-        const questionOptions = question ? question.Options : ''
+        const questionTitle = question?.Question
+        const questionOptions = question?.Options
         console.log(questionOptions)
         return(
             <div>
@@ -67,14 +80,14 @@ const Quiz = ({prop}) => {
                 </div>
 
                 <div className='options-container'>
-                    {questionOptions && questionOptions.map((answer,index)=>(
-                        <div key={index} className="option" id={"option"+index}>
+                    {questionOptions?.map((answer,index)=>(
+                        <OptionStyle key={index} selected={selectedAnswer===answer.Answer} className="option" id={"option"+index} onClick={()=>(onSelect(answer.Answer))}>
                             <div className='optionImage' id={'optionImage'+index} style={{ backgroundImage: `url('../public/img/${answer.Image}')` }}></div>
 
                             <div className='optionText' id={'optionText'+index}>
-                                {answer.Type}
+                                {answer.Answer}
                             </div>
-                        </div>
+                        </OptionStyle>
                     ))}
                 </div>
         
