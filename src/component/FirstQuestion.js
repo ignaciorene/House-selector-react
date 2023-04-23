@@ -29,97 +29,114 @@ const OptionStyle = styled.div`
 `;
 
 //first part shows the category of animals of the first question, when user chooses answer it will show the different options of the selected animal
-const FirstQuestion = (prop) => {
-    const userMenuSelection = prop;
-
-  //state for the selected answer
-  const [selected, setSelected] = useState();
+const FirstQuestion = ({ userMenuSelection }) => {
+  //state for the selected animal type
+  const [selectedAnimalType, setSelectedAnimalType] = useState();
+  //State for the selected answer
+  const [selectedAnswer, setSelectedAnswer] = useState();
   //state that verifies the user has choosen a type of animal
   const [typeSelected, setTypeSelected] = useState();
   //state that verifies the user final answer
-  const [finalAnswer,setFinalAnswer]=useState();
-    
+  const [finalAnswer, setFinalAnswer] = useState();
 
   //user choose the type of animal and from there it will show the different options within the selected type of animal
-  const displayFirstQuestion = () => {
-    const animalOptions = typeSelected
-      ? firstQuestion.Options[typeSelected].Options
-      : "";
+  const animalOptions = typeSelected
+    ? firstQuestion.Options[typeSelected].Options
+    : "";
 
-    return (
-      <div>
-        <div className="question-title-container">{firstQuestion.Question}</div>
-
-        {/*First part of the question let the user choose the type of animal*/}
-        {!typeSelected && (
-          <div>
-            {animals.map((animal, index) => (
-              <div>
-                <div className="options-container">
-                  <OptionStyle
-                    key={index}
-                    selected={selected === animal.Type}
-                    className="option"
-                    onClick={() => setSelected(animal.Type)}
-                  >
-                    {/*<img className="optionImage" src={animal.Image}></img>*/}
-
-                    <div className="optionText">{animal.Type}</div>
-                  </OptionStyle>
-                </div>
-              </div>
-            ))}
-
-            <div className="button-container">
-              <button
-                className="select-answer-button"
-                onClick={() => setTypeSelected(selected)}
-              >
-                Submit answer
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/*Second part of the question let the user choose the final answer*/}
-        {typeSelected && (
-          <div>
-            {animalOptions?.map((option, index) => (
-              <div>
-                <div className="options-container">
-                  <OptionStyle
-                    key={index}
-                    selected={selected === option.Answer}
-                    className="option"
-                    onClick={() => setSelected(option.Answer)}
-                  >
-                    {/*<img className="optionImage" src={option.Image}></img>*/}
-
-                    <div className="optionText">{option.Answer}</div>
-                  </OptionStyle>
-                </div>
-              </div>
-            ))}
-
-            <div className="button-container">
-              <button
-                className="select-answer-button"
-                onClick={() => console.log(selected)}
-              >
-                Submit answer
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/*Load next component when user choose the final answer*/}
-        {finalAnswer && <Quiz prop={userMenuSelection}/>}
-
-      </div>
-    );
+  //Function onSubmit that prevents the user to submit empty answer
+  const onSubmitType = (selectedAnswer) => {
+    if (selectedAnswer) {
+      setTypeSelected(selectedAnimalType);
+    }
   };
 
-  return <div>{displayFirstQuestion()}</div>;
+  const onSubmitFinalAnswer = (selectedAnswer) => {
+    if (selectedAnswer) {
+      setFinalAnswer(selectedAnswer);
+    }
+  };
+
+  return (
+    <div>
+      {/*First part of the question let the user choose the type of animal*/}
+      {!typeSelected && (
+        <div>
+          <div className="question-title-container">
+            {firstQuestion.Question}
+          </div>
+          {animals.map((animal, index) => (
+            <div>
+              <div className="options-container">
+                <OptionStyle
+                  key={index}
+                  selected={selectedAnimalType === animal.Type}
+                  className="option"
+                  onClick={() => setSelectedAnimalType(animal.Type)}
+                >
+                  {/*<img className="optionImage" src={animal.Image}></img>*/}
+
+                  <div className="optionText">{animal.Type}</div>
+                </OptionStyle>
+              </div>
+            </div>
+          ))}
+
+          <div className="button-container">
+            <button
+              className="select-answer-button"
+              onClick={() => onSubmitType(selectedAnimalType)}
+            >
+              Submit answer
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/*Second part of the question let the user choose the final answer*/}
+      {typeSelected && !finalAnswer && (
+        <div>
+          <div className="question-title-container">
+            {firstQuestion.Question}
+          </div>
+          {animalOptions?.map((option, index) => (
+            <div>
+              <div className="options-container">
+                <OptionStyle
+                  key={index}
+                  selected={selectedAnswer === option.Answer}
+                  className="option"
+                  onClick={() => setSelectedAnswer(option.Answer)}
+                >
+                  {/*<img className="optionImage" src={option.Image}></img>*/}
+
+                  <div className="optionText">{option.Answer}</div>
+                </OptionStyle>
+              </div>
+            </div>
+          ))}
+
+          <div className="button-container">
+            <button
+              className="select-answer-button"
+              onClick={() => onSubmitFinalAnswer(selectedAnswer)}
+            >
+              Submit answer
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/*Load next component when user choose the final answer*/}
+      {finalAnswer && (
+        <Quiz
+          userMenuSelection={userMenuSelection}
+          animalType={typeSelected}
+          firstAnswer={finalAnswer}
+        />
+      )}
+    </div>
+  );
 };
 
 export default FirstQuestion;
