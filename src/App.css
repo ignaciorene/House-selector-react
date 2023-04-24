@@ -1,60 +1,61 @@
 /**/
 
-html{
+html {
   height: 100%;
-  margin:0;
+  margin: 0;
   background-color: rgba(10, 34, 83, 1);
 }
 
-body{
-  font-family: 'HarryPotter7', sans-serif;
- /** background-image: url('./img/stars-background.jpeg');**/
+body {
+  font-family: "HarryPotter7", sans-serif;
+  /** background-image: url('./img/stars-background.jpeg');**/
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100%;
-  margin:0;
+  margin: 0;
   color: white;
   background-color: rgba(10, 34, 83, 1);
 }
 
-.main-container{
-  width: 100%;
+.main-container {
+  width: 80%;
+  margin: auto;
   text-align: center;
   height: 100%;
   background-color: rgba(10, 34, 83, 0.5);
 }
 
-.main-title h1{
+.main-title h1 {
   font-size: 4rem;
-  margin:0;
+  margin: 0;
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
-.second-container{
+.second-container {
   width: 100%;
 }
 
-#start-image{
+#start-image {
   background-color: rgba(10, 34, 83, 0);
   width: 20rem;
   height: 20rem;
   margin: auto;
   margin-bottom: 1rem;
-  background-image: url('../public/img/sorting-hat.png');
+  background-image: url("../public/img/sorting-hat.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size:contain;
+  background-size: contain;
 }
 
-.startButtons-container{
+.startButtons-container {
   display: flex;
   width: 25%;
   margin: auto;
 }
 
-button{
+button {
   width: 10rem;
   height: 4rem;
   border-radius: 1rem;
@@ -66,18 +67,21 @@ button{
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
 }
 
-.question-title-container{
+.question-title-container {
   width: 100%;
   padding-top: 2rem;
+  font-size: 2rem;
 }
 
-.question-title{
+.question-title {
   width: 75%;
   font-size: 2rem;
   padding-top: 2rem;
@@ -85,14 +89,15 @@ button:hover{
   margin: auto;
 }
 
-.options-container{
+.options-container {
   width: 100%;
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.option{
+.option {
   width: 15rem;
   height: 15rem;
   margin: 1rem;
@@ -104,30 +109,31 @@ button:hover{
   flex-direction: column;
 }
 
-.option:hover{
+.option:hover {
   cursor: pointer;
 }
 
-.optionImage{
+.optionImage {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   width: 90%;
   height: 7rem;
-  margin-top:0.5rem;
+  margin-top: 0.5rem;
   margin: auto;
 }
 
-.optionText{
+.optionText {
   width: 100%;
   margin: auto;
 }
 
-.result-image-container{
+.result-image-container {
   width: 100%;
+  margin-top: 2rem;
 }
 
-.result-image{
+.result-image {
   height: 15rem;
   width: 15rem;
   margin: auto;
@@ -136,12 +142,15 @@ button:hover{
   background-size: contain;
 }
 
-.result-title{
+.result-title {
   width: 100%;
 }
 
-@media (max-width: 600px){
-  .startButtons-container{
-      width: 100%;
+@media (max-width: 600px) {
+  .main-container {
+    width: 100%;
+  }
+  .startButtons-container {
+    width: 100%;
   }
 }

@@ -25,7 +25,7 @@ const animals = [
 
 //when user select an answer then the answer will highlight
 const OptionStyle = styled.div`
-  background: ${({ selected }) => (selected ? "red" : "")};
+  background: ${({ selected }) => (selected ? "rgba(149, 171, 240, 0.5)" : "")};
 `;
 
 //first part shows the category of animals of the first question, when user chooses answer it will show the different options of the selected animal
@@ -61,26 +61,24 @@ const FirstQuestion = ({ userMenuSelection }) => {
     <div>
       {/*First part of the question let the user choose the type of animal*/}
       {!typeSelected && (
-        <div>
+        <div className="main-container">
           <div className="question-title-container">
             {firstQuestion.Question}
           </div>
-          {animals.map((animal, index) => (
-            <div>
-              <div className="options-container">
-                <OptionStyle
-                  key={index}
-                  selected={selectedAnimalType === animal.Type}
-                  className="option"
-                  onClick={() => setSelectedAnimalType(animal.Type)}
-                >
-                  {/*<img className="optionImage" src={animal.Image}></img>*/}
+          <div className="options-container">
+            {animals.map((animal, index) => (
+              <OptionStyle
+                key={index}
+                selected={selectedAnimalType === animal.Type}
+                className="option"
+                onClick={() => setSelectedAnimalType(animal.Type)}
+              >
+                {/*<img className="optionImage" src={animal.Image}></img>*/}
 
-                  <div className="optionText">{animal.Type}</div>
-                </OptionStyle>
-              </div>
-            </div>
-          ))}
+                <div className="optionText">{animal.Type}</div>
+              </OptionStyle>
+            ))}
+          </div>
 
           <div className="button-container">
             <button
@@ -95,26 +93,24 @@ const FirstQuestion = ({ userMenuSelection }) => {
 
       {/*Second part of the question let the user choose the final answer*/}
       {typeSelected && !finalAnswer && (
-        <div>
+        <div className="main-container">
           <div className="question-title-container">
             {firstQuestion.Question}
           </div>
-          {animalOptions?.map((option, index) => (
-            <div>
-              <div className="options-container">
-                <OptionStyle
-                  key={index}
-                  selected={selectedAnswer === option.Answer}
-                  className="option"
-                  onClick={() => setSelectedAnswer(option.Answer)}
-                >
-                  {/*<img className="optionImage" src={option.Image}></img>*/}
+          <div className="options-container">
+            {animalOptions?.map((option, index) => (
+              <OptionStyle
+                key={index}
+                selected={selectedAnswer === option.Answer}
+                className="option"
+                onClick={() => setSelectedAnswer(option.Answer)}
+              >
+                {/*<img className="optionImage" src={option.Image}></img>*/}
 
-                  <div className="optionText">{option.Answer}</div>
-                </OptionStyle>
-              </div>
-            </div>
-          ))}
+                <div className="optionText">{option.Answer}</div>
+              </OptionStyle>
+            ))}
+          </div>
 
           <div className="button-container">
             <button

@@ -15,10 +15,10 @@ const Menu = () => {
   };
 
   return (
-    <div className="main-container">
+    <>
       {/*option state starts null, so it shows the main menu, when user makes click in any of the buttons changes the state of option and runs the Quiz module replacing the menu */}
       {!option && (
-        <>
+        <div className="main-container">
           <div className="main-title">
             <h1>Sorting Hat</h1>
           </div>
@@ -41,10 +41,10 @@ const Menu = () => {
               </div>
             </div>
           </div>
-        </>
+        </div>
       )}
       {option && <FirstQuestion userMenuSelection={option} />}
-    </div>
+    </>
   );
 };
 

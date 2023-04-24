@@ -6,7 +6,7 @@ import End from "./End";
 
 //when user select an answer then the answer will highlight
 const OptionStyle = styled.div`
-  background: ${({ selected }) => (selected ? "red" : "")};
+  background: ${({ selected }) => (selected ? "rgba(149, 171, 240, 0.5)" : "")};
 `;
 
 //function that helps choose random selection of questions
@@ -90,7 +90,7 @@ const Quiz = ({ userMenuSelection, animalType, firstAnswer }) => {
     return (
       <>
         {!quizFinished && (
-          <div>
+          <div className="main-container">
             <div className="question-title-container">{questionTitle}</div>
 
             <div className="options-container">
@@ -102,13 +102,13 @@ const Quiz = ({ userMenuSelection, animalType, firstAnswer }) => {
                   id={"option" + index}
                   onClick={() => onSelect(answer.Answer)}
                 >
-                  <div
+                  {/*<div
                     className="optionImage"
                     id={"optionImage" + index}
                     style={{
                       backgroundImage: `url('../public/img/${answer.Image}')`,
                     }}
-                  ></div>
+                  ></div>*/}
 
                   <div className="optionText" id={"optionText" + index}>
                     {answer.Answer}

@@ -1,5 +1,9 @@
 import React from "react";
 import { firstQuestion, questions } from "../data/data";
+import gryffindorLogo from "../img/gryffindor.png";
+import ravenclawLogo from "../img/ravenclaw.png";
+import hufflepuffLogo from "../img/hufflepuff.png";
+import slytherinLogo from "../img/slytherin.png";
 
 const End = ({
   animalType,
@@ -47,23 +51,49 @@ const End = ({
   //search the house with most points
   const winner = Math.max(gryffindor, ravenclaw, hufflepuff, slytherin);
 
-  const houseSorted = () => {
-    switch (winner) {
-      case gryffindor:
-        return "Gryffindor";
+  let houseSortedData = [];
 
-      case ravenclaw:
-        return "Ravenclaw";
+  switch (winner) {
+    case gryffindor:
+      houseSortedData = ["Gryffindor", gryffindorLogo];
+      break;
 
-      case hufflepuff:
-        return "Hufflepuff";
+    case ravenclaw:
+      houseSortedData = ["Ravenclaw", ravenclawLogo];
+      break;
 
-      case slytherin:
-        return "Slytherin";
-    }
-  };
+    case hufflepuff:
+      houseSortedData = ["Hufflepuff", hufflepuffLogo];
+      break;
 
-  return <div>{houseSorted()}</div>;
+    case slytherin:
+      houseSortedData = ["Slytherin", slytherinLogo];
+      break;
+  }
+
+  console.log(points);
+  console.log(winner);
+
+  return (
+    <div className="main-container">
+      <div className="result-image-container">
+        <img className="result-image" src={houseSortedData[1]}></img>
+      </div>
+
+      <div className="result-title">
+        <h1>You are a {houseSortedData[0]}</h1>
+      </div>
+
+      {/* 
+      <div className="button-container">
+        <div className="startButtons-container">
+          <button id="startButton">Normal selection</button>
+          <button id="startButton">All question selection</button>
+        </div>
+      </div>
+    */}
+    </div>
+  );
 };
 
 export default End;
