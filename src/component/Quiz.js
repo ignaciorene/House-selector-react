@@ -111,14 +111,8 @@ const Quiz = ({
                   id={"option" + index}
                   onClick={() => onSelect(answer.Answer)}
                 >
-                  {/*<div
-                    className="optionImage"
-                    id={"optionImage" + index}
-                    style={{
-                      backgroundImage: `url('../public/img/${answer.Image}')`,
-                    }}
-                  ></div>*/}
-
+                  {answer?.Image && <img src={require("../../public/img/" + answer.Image)} className="optionImage" />}
+                  
                   <div className="optionText" id={"optionText" + index}>
                     {answer.Answer}
                   </div>

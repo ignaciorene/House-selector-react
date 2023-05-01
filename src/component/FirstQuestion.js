@@ -73,7 +73,7 @@ const FirstQuestion = ({ userMenuSelection, onChangeUserMenuSelection }) => {
                 className="option"
                 onClick={() => setSelectedAnimalType(animal.Type)}
               >
-                {/*<img className="optionImage" src={animal.Image}></img>*/}
+                <img className="optionImage" src={animal.Image}></img>
 
                 <div className="optionText">{animal.Type}</div>
               </OptionStyle>
@@ -105,7 +105,7 @@ const FirstQuestion = ({ userMenuSelection, onChangeUserMenuSelection }) => {
                 className="option"
                 onClick={() => setSelectedAnswer(option.Answer)}
               >
-                {/*<img className="optionImage" src={option.Image}></img>*/}
+                <img src={require("../../public/img/" + option.Image)} className="optionImage" />
 
                 <div className="optionText">{option.Answer}</div>
               </OptionStyle>
