@@ -17,7 +17,16 @@ function getRandomSelection(min, max) {
   return Math.round(result);
 }
 
-const Quiz = ({ userMenuSelection, animalType, firstAnswer }) => {
+const Quiz = ({
+  userMenuSelection,
+  animalType,
+  firstAnswer,
+  onChangeUserMenuSelection,
+  onChangeAnimalType,
+  onChangeFirstAnswer,
+  onChangesetSelectedAnswer,
+  onChangeSetSelectedAnimalType,
+}) => {
   const option = userMenuSelection;
 
   //State that is an array with the questions selected
@@ -129,10 +138,18 @@ const Quiz = ({ userMenuSelection, animalType, firstAnswer }) => {
         )}
         {quizFinished && (
           <End
+            userMenuSelection={userMenuSelection}
+            onChangeUserMenuSelection={onChangeUserMenuSelection}
             animalType={animalType}
+            onChangeAnimalType={onChangeAnimalType}
             firstAnswer={firstAnswer}
+            onChangeFirstAnswer={onChangeFirstAnswer}
             answersSelected={answersSelected}
+            onChangeAnswersSelected={setAnswersSelected}
             questionsSelected={questionsSelected}
+            onChangeQuestionsSelected={setQuestionsSelected}
+            onChangesetSelectedAnswer={onChangesetSelectedAnswer}
+            onChangeSetSelectedAnimalType={onChangeSetSelectedAnimalType}
           />
         )}
       </>

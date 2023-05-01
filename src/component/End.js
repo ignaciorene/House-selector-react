@@ -4,12 +4,24 @@ import gryffindorLogo from "../img/gryffindor.png";
 import ravenclawLogo from "../img/ravenclaw.png";
 import hufflepuffLogo from "../img/hufflepuff.png";
 import slytherinLogo from "../img/slytherin.png";
+import {
+  NORMAL_SELECTION,
+  ALL_QUESTIONS_SELECTION,
+} from "../constants/MenuSelection";
 
 const End = ({
+  userMenuSelection,
   animalType,
   firstAnswer,
   answersSelected,
   questionsSelected,
+  onChangeUserMenuSelection,
+  onChangeAnimalType,
+  onChangeFirstAnswer,
+  onChangeAnswersSelected,
+  onChangeQuestionsSelected,
+  onChangesetSelectedAnswer,
+  onChangeSetSelectedAnimalType,
 }) => {
   //Search the points of the first answer and save it in a json called points
   const firstPoints = firstQuestion.Options[animalType].Options.find(
@@ -74,6 +86,17 @@ const End = ({
   console.log(points);
   console.log(winner);
 
+  //Function to reset quiz
+  const resetUserMenuSelection = (userSelection) => {
+    onChangeUserMenuSelection(userSelection);
+    onChangeAnimalType("");
+    onChangeFirstAnswer("");
+    onChangeAnswersSelected("");
+    onChangeQuestionsSelected("");
+    onChangesetSelectedAnswer("");
+    onChangeSetSelectedAnimalType("");
+  };
+
   return (
     <div className="main-container">
       <div className="result-image-container">
@@ -84,14 +107,22 @@ const End = ({
         <h1>You are a {houseSortedData[0]}</h1>
       </div>
 
-      {/* 
       <div className="button-container">
         <div className="startButtons-container">
-          <button id="startButton">Normal selection</button>
-          <button id="startButton">All question selection</button>
+          <button
+            id="startButton"
+            onClick={() => resetUserMenuSelection(NORMAL_SELECTION)}
+          >
+            Normal selection
+          </button>
+          <button
+            id="startButton"
+            onClick={() => resetUserMenuSelection(ALL_QUESTIONS_SELECTION)}
+          >
+            All question selection
+          </button>
         </div>
       </div>
-    */}
     </div>
   );
 };

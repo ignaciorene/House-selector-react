@@ -29,7 +29,7 @@ const OptionStyle = styled.div`
 `;
 
 //first part shows the category of animals of the first question, when user chooses answer it will show the different options of the selected animal
-const FirstQuestion = ({ userMenuSelection }) => {
+const FirstQuestion = ({ userMenuSelection, onChangeUserMenuSelection }) => {
   //state for the selected animal type
   const [selectedAnimalType, setSelectedAnimalType] = useState();
   //State for the selected answer
@@ -127,8 +127,13 @@ const FirstQuestion = ({ userMenuSelection }) => {
       {finalAnswer && (
         <Quiz
           userMenuSelection={userMenuSelection}
+          onChangeUserMenuSelection={onChangeUserMenuSelection}
           animalType={typeSelected}
+          onChangeAnimalType={setTypeSelected}
           firstAnswer={finalAnswer}
+          onChangeFirstAnswer={setFinalAnswer}
+          onChangesetSelectedAnswer={setSelectedAnswer}
+          onChangeSetSelectedAnimalType={setSelectedAnimalType}
         />
       )}
     </div>

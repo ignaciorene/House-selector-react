@@ -1,6 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import FirstQuestion from "./FirstQuestion";
+import {
+  NORMAL_SELECTION,
+  ALL_QUESTIONS_SELECTION,
+} from "../constants/MenuSelection";
 
 const Menu = () => {
   const [option, setOption] = useState("");
@@ -26,15 +30,16 @@ const Menu = () => {
             <div id="start-image"></div>
             <div className="options-container">
               <div className="startButtons-container">
+                
                 <button
                   id="startButton"
-                  onClick={() => optionSelected("normalSelection")}
+                  onClick={() => optionSelected(NORMAL_SELECTION)}
                 >
                   Normal selection
                 </button>
                 <button
                   id="startButton"
-                  onClick={() => optionSelected("allQuestionsSelection")}
+                  onClick={() => optionSelected(ALL_QUESTIONS_SELECTION)}
                 >
                   All questions selection
                 </button>
@@ -43,7 +48,12 @@ const Menu = () => {
           </div>
         </div>
       )}
-      {option && <FirstQuestion userMenuSelection={option} />}
+      {option && (
+        <FirstQuestion
+          userMenuSelection={option}
+          onChangeUserMenuSelection={setOption}
+        />
+      )}
     </>
   );
 };
